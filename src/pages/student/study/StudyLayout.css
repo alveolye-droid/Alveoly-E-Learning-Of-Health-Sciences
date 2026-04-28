@@ -1,0 +1,464 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary: #0ea5a4;
+  --primary-dark: #0f766e;
+  --bg: #f8fafc;
+  --white: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --radius: 14px;
+  --radius-sm: 10px;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ================= SHELL ================= */
+.nl-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+.nl-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.nl-header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.nl-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+/* ================= NAV ================= */
+.nl-nav {
+  display: flex;
+  gap: 22px;
+}
+
+.nl-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nl-nav-item:hover {
+  color: var(--primary);
+}
+
+/* ================= ACTION BUTTONS ================= */
+.nl-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.nl-search-btn,
+.nl-menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.nl-search-btn:hover,
+.nl-menu-btn:hover {
+  color: var(--primary);
+}
+
+/* ================= MOBILE NAV ================= */
+/* ================= MOBILE NAV (FIXED) ================= */
+@media (max-width: 900px) {
+  .nl-nav {
+    position: fixed;
+    top: 64px;               /* below header */
+    left: 0;
+    right: 0;
+
+    background: var(--white);
+    flex-direction: column;
+    padding: 16px 20px;
+    gap: 14px;
+
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: var(--shadow);
+    z-index: 150;
+  }
+
+  .nl-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nl-nav-item {
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  .nl-nav-item:hover {
+    background: #f1f5f9;
+  }
+}
+
+/* ================= SEARCH OVERLAY ================= */
+.nl-search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.nl-search-modal {
+  background: var(--white);
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: var(--radius);
+}
+
+.nl-search-modal input {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+/* SEARCH RESULTS */
+.nl-search-results {
+  margin-top: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.nl-search-result {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: inherit;
+}
+
+.nl-search-result:hover {
+  background: #f1f5f9;
+}
+
+.nl-search-result img {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.nl-search-result .type {
+  font-size: 0.75rem;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+/* ================= HERO ================= */
+.nl-hero {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 70px 20px;
+}
+
+.nl-hero-content {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.nl-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.nl-hero p {
+  opacity: 0.9;
+}
+
+/* HERO SEARCH */
+.nl-search-box {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+.nl-search-box input {
+  flex: 1;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  border: none;
+}
+
+.nl-search-box button {
+  padding: 14px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--text);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= FEATURED ================= */
+.nl-featured-wrap {
+  padding: 60px 20px;
+}
+
+.nl-featured-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nl-featured-grid {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.nl-feature-item {
+  min-width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nl-feature-image {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 280px;
+}
+
+.nl-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nl-feature-image h3 {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--primary);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* DOTS */
+.nl-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.nl-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5f5;
+  cursor: pointer;
+}
+
+.nl-dots span.active {
+  background: var(--primary);
+}
+
+/* ================= CARE PLANS ================= */
+.nl-careplans-wrap {
+  padding: 50px 20px;
+}
+
+.nl-careplans-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nl-careplans-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.nl-careplans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.nl-careplans-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 14px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+}
+
+.nl-careplans-card img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+}
+
+/* ================= LATEST ================= */
+.nl-latest-wrap {
+  padding: 60px 20px;
+  background: #f1f5f9;
+}
+
+.nl-latest-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
+}
+
+.nl-latest-post {
+  display: flex;
+  gap: 16px;
+  background: white;
+  padding: 16px;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nl-latest-post img {
+  width: 140px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.nl-latest-content span {
+  color: var(--primary);
+  font-size: 0.8rem;
+}
+
+/* ================= SIDEBAR ================= */
+.nl-latest-sidebar {
+  background: white;
+  padding: 20px;
+  border-radius: var(--radius);
+}
+
+.nl-sidebar-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nl-sidebar-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+/* ================= FOOTER ================= */
+.nl-footer {
+  background: #020617;
+  color: #cbd5f5;
+  margin-top: auto;
+}
+
+.nl-footer-top {
+  padding: 40px 20px;
+}
+
+.nl-footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.nl-footer-links a {
+  display: block;
+  color: #cbd5f5;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.nl-footer-bottom {
+  border-top: 1px solid #1e293b;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .nl-latest-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nl-search-box {
+    flex-direction: column;
+  }
+}

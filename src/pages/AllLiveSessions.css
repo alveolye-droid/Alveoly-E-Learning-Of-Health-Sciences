@@ -1,0 +1,204 @@
+/* ===============================
+   🌐 GENERAL PAGE STYLING
+=============================== */
+.create-course-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+.create-course-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.page-subtitle {
+  color: #475569;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ===============================
+   🧩 TABLE CONTAINER
+=============================== */
+.create-course-form-wrapper {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+  overflow-x: auto;
+}
+
+/* ===============================
+   🧾 TABLE STYLES
+=============================== */
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 800px;
+}
+
+.course-table th,
+.course-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.course-table th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+  color: #334155;
+}
+
+.course-table tbody tr:hover {
+  background-color: #f8fafc;
+  transition: background-color 0.2s ease;
+}
+
+/* ===============================
+   🧠 INPUT FIELDS (Edit Mode)
+=============================== */
+input[type="text"],
+input[type="datetime-local"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+}
+
+textarea {
+  resize: none;
+}
+
+/* ===============================
+   🎛️ ACTION BUTTONS
+=============================== */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+button,
+a.join-link {
+  padding: 0.45rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Join Button */
+.join-link {
+  background-color: #3b82f6;
+  color: #fff;
+  text-decoration: none;
+}
+.join-link:hover {
+  background-color: #2563eb;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #10b981;
+  color: white;
+}
+.edit-btn:hover {
+  background-color: #059669;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+}
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Save and Cancel Buttons */
+.save-btn {
+  background-color: #22c55e;
+  color: white;
+}
+.save-btn:hover {
+  background-color: #16a34a;
+}
+
+.cancel-btn {
+  background-color: #94a3b8;
+  color: white;
+}
+.cancel-btn:hover {
+  background-color: #64748b;
+}
+
+/* ===============================
+   📣 FEEDBACK MESSAGE
+=============================== */
+.feedback-message {
+  text-align: center;
+  padding: 0.75rem 1rem;
+  margin: 1rem auto;
+  border-radius: 6px;
+  max-width: 600px;
+  background-color: #fef9c3;
+  color: #92400e;
+  font-weight: 500;
+}
+
+/* ===============================
+   📱 RESPONSIVENESS
+=============================== */
+@media (max-width: 900px) {
+  .course-table {
+    font-size: 0.85rem;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .create-course-page {
+    padding: 1rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .create-course-form-wrapper {
+    padding: 1rem;
+  }
+
+  .course-table th,
+  .course-table td {
+    padding: 0.6rem 0.5rem;
+  }
+
+  button,
+  .join-link {
+    width: 100%;
+    text-align: center;
+  }
+}

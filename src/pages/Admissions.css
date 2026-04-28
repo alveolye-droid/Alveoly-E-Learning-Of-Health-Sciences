@@ -1,0 +1,187 @@
+.admissions-page {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ========================
+   HERO SECTION
+======================== */
+.admissions-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admissions-hero .overlay {
+  background-color: rgba(0,0,0,0.55);
+  padding: 2rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.admissions-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.admissions-hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.admissions-hero .apply-btn {
+  background: linear-gradient(135deg,#ffb703,#ffd166);
+  color: #000;
+  padding: 0.85rem 2rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.admissions-hero .apply-btn:hover {
+  background: linear-gradient(135deg,#ffd166,#ffb703);
+}
+
+/* ========================
+   REQUIREMENTS SECTION
+======================== */
+.admission-requirements {
+  padding: 4rem 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.admission-requirements h2 {
+  color: #002855;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 1rem auto 0 auto;
+}
+
+.requirements-list li {
+  background: #f8f9fc;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* ========================
+   APPLICATION STEPS
+======================== */
+.application-steps {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #f8f9fc;
+}
+
+.application-steps h2 {
+  font-size: 2rem;
+  color: #002855;
+  margin-bottom: 3rem;
+}
+
+.steps-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.step-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.step-icon {
+  font-size: 3rem;
+  color: #0056d2;
+  margin-bottom: 1rem;
+}
+
+/* ========================
+   CTA SECTION
+======================== */
+.admission-cta {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to right,#0056d2,#003f88);
+  color: #fff;
+}
+
+.admission-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.admission-cta p {
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.admission-cta .cta-btn {
+  background: linear-gradient(135deg,#ffb703,#ffd166);
+  color: #000;
+  padding: 0.85rem 2rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.admission-cta .cta-btn:hover {
+  background: linear-gradient(135deg,#ffd166,#ffb703);
+}
+
+/* ========================
+   ANIMATIONS
+======================== */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 992px) {
+  .admissions-hero h1 { font-size: 2.4rem; }
+  .admissions-hero p { font-size: 1rem; }
+  .step-card { width: 90%; }
+  .requirements-list li { font-size: 0.95rem; }
+}
+
+@media (max-width: 576px) {
+  .admissions-hero h1 { font-size: 1.8rem; }
+  .admissions-hero p { font-size: 0.95rem; }
+  .admissions-hero .apply-btn { width: 90%; padding: 0.7rem 0; }
+}

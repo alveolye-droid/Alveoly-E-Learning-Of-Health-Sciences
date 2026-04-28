@@ -1,0 +1,44 @@
+.study-reader {
+  max-width: 760px;
+}
+
+.reader-header {
+  margin-bottom: 40px;
+}
+
+.reader-header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.reader-category {
+  font-size: 0.9rem;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.reader-section {
+  margin-bottom: 60px;
+}
+
+.reader-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+.reader-content img {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.reader-quiz {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.reader-quiz button {
+  display: block;
+  margin-top: 8px;
+}

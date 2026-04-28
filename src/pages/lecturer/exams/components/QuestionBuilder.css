@@ -1,0 +1,122 @@
+/* ===============================
+   Question Builder Wrapper
+================================ */
+.question-builder {
+  margin-top: 28px;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.question-builder h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+/* ===============================
+   Inputs & Textareas
+================================ */
+.question-builder textarea,
+.question-builder input,
+.question-builder select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.question-builder textarea:focus,
+.question-builder input:focus,
+.question-builder select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Question textarea */
+.question-builder textarea:first-of-type {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Rationale textarea */
+.question-builder textarea:last-of-type {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* ===============================
+   Select (Correct Option)
+================================ */
+.question-builder select {
+  font-weight: 600;
+  background-color: #f9fafb;
+  cursor: pointer;
+}
+
+/* ===============================
+   Add Question Button
+================================ */
+.question-builder button {
+  margin-top: 10px;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.question-builder button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+  opacity: 0.95;
+}
+
+.question-builder button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+/* ===============================
+   Responsive Design
+================================ */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .question-builder {
+    padding: 18px;
+  }
+
+  .question-builder h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .question-builder {
+    padding: 16px;
+  }
+
+  .question-builder textarea,
+  .question-builder input,
+  .question-builder select {
+    font-size: 0.9rem;
+  }
+
+  .question-builder button {
+    width: 100%;
+  }
+}

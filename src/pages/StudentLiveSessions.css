@@ -1,0 +1,200 @@
+/* ===== Root variables ===== */
+:root {
+  --primary-color: #004aad;
+  --secondary-color: #0d6efd;
+  --bg-color: #f9f9f9;
+  --text-color: #222;
+  --card-bg: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --status-scheduled: #ffc107;
+  --status-ongoing: #28a745;
+  --status-completed: #6c757d;
+  --status-cancelled: #dc3545;
+}
+
+/* ===== Page Layout ===== */
+.student-live-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===== Feedback Messages ===== */
+.feedback-message {
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* ===== Table Wrapper ===== */
+.table-wrapper {
+  overflow-x: auto;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 10px var(--shadow);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* ===== Table Styling ===== */
+.live-sessions-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.live-sessions-table th,
+.live-sessions-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.live-sessions-table th {
+  background-color: var(--primary-color);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.live-sessions-table tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+/* ===== Status Badges ===== */
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+}
+
+.status-badge.scheduled {
+  background-color: var(--status-scheduled);
+  color: #212529;
+}
+
+.status-badge.ongoing {
+  background-color: var(--status-ongoing);
+}
+
+.status-badge.completed {
+  background-color: var(--status-completed);
+}
+
+.status-badge.cancelled {
+  background-color: var(--status-cancelled);
+}
+
+/* ===== Join Button ===== */
+.join-btn,
+.not-started-btn,
+.cancelled-btn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.join-btn {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.join-btn:hover {
+  background-color: #0056d2;
+}
+
+.not-started-btn {
+  background-color: #ffc107;
+  color: #212529;
+  cursor: not-allowed;
+}
+
+.cancelled-btn {
+  background-color: var(--status-cancelled);
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .header h2 {
+    font-size: 1.75rem;
+  }
+
+  .live-sessions-table th,
+  .live-sessions-table td {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .live-sessions-table {
+    min-width: 100%;
+  }
+
+  .live-sessions-table th,
+  .live-sessions-table td {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-live-page {
+    padding: 0.5rem;
+  }
+
+  .live-sessions-table th,
+  .live-sessions-table td {
+    padding: 0.4rem 0.5rem;
+  }
+
+  .status-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .join-btn,
+  .not-started-btn,
+  .cancelled-btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+}

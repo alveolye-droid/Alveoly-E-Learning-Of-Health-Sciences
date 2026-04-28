@@ -1,0 +1,171 @@
+/* =====================================================
+   ALVEOLY E-LEARNING
+   STUDENT STUDY LIST (NURSESLABS-INSPIRED)
+===================================================== */
+
+/* ================= ROOT ================= */
+.alveoly-study-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1f2937;
+  line-height: 1.7;
+  background: #ffffff;
+}
+
+/* ================= HERO ================= */
+.study-hero {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 24px;
+}
+
+.study-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.study-hero p {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 720px;
+}
+
+/* ================= CATEGORY STRIP ================= */
+.study-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.study-categories span {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.study-categories span:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* ================= LIST ================= */
+.study-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ================= STUDY ITEM ================= */
+.study-item {
+  cursor: pointer;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.study-item:hover {
+  background: #fafafa;
+}
+
+/* Title */
+.study-item-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+/* Category */
+.study-item-category {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+
+/* Meta */
+.study-item-meta {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* ================= EMPTY / STATES ================= */
+.empty-msg {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.study-loading,
+.study-error {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 1.05rem;
+  color: #475569;
+}
+
+/* ================= PRINT FRIENDLY ================= */
+@media print {
+  .study-categories {
+    display: none;
+  }
+
+  .study-item {
+    break-inside: avoid;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .alveoly-study-page {
+    padding: 30px 16px 60px;
+  }
+
+  .study-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .study-item-title {
+    font-size: 1.2rem;
+  }
+}
+
+.nl-search-results {
+  margin-top: 12px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.nl-search-result {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nl-search-result:hover {
+  background: #f3f4f6;
+}
+
+.nl-search-result img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.nl-search-result .type {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #6b7280;
+}

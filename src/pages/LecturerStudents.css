@@ -1,0 +1,98 @@
+/* Container */
+.lecturer-students-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.lecturer-students-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+/* Table */
+.lecturer-students-container table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.lecturer-students-container th,
+.lecturer-students-container td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1rem;
+}
+
+.lecturer-students-container th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Rows hover effect */
+.lecturer-students-container tbody tr:hover {
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+
+/* Loading & empty state */
+.lecturer-students-container p {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+/* Responsive: scrollable on small screens */
+@media (max-width: 768px) {
+  .lecturer-students-container table,
+  .lecturer-students-container thead,
+  .lecturer-students-container tbody,
+  .lecturer-students-container th,
+  .lecturer-students-container td,
+  .lecturer-students-container tr {
+    display: block;
+  }
+
+  .lecturer-students-container thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .lecturer-students-container tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 10px;
+  }
+
+  .lecturer-students-container td {
+    padding-left: 50%;
+    position: relative;
+    text-align: left;
+  }
+
+  .lecturer-students-container td::before {
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #007bff;
+  }
+
+  .lecturer-students-container td:nth-of-type(1)::before { content: "Name"; }
+  .lecturer-students-container td:nth-of-type(2)::before { content: "Email"; }
+  .lecturer-students-container td:nth-of-type(3)::before { content: "Courses"; }
+}

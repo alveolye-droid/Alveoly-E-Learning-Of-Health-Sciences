@@ -1,0 +1,102 @@
+/* ================= FOOTER ================= */
+.nl-footer {
+  background: #0a3a66;
+  color: #ffffff;
+  margin-top: 4rem;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* TOP SECTION */
+.nl-footer-top {
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.nl-footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* BRAND */
+.nl-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.nl-footer-logo svg {
+  font-size: 1.8rem;
+}
+
+.nl-footer-brand p {
+  max-width: 520px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #d9e6f2;
+}
+
+/* LINKS */
+.nl-footer-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.nl-footer-links a {
+  color: #ffffff;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.nl-footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* BOTTOM BAR */
+.nl-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.2rem 1.5rem;
+}
+
+.nl-footer-bottom-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #d0e0f0;
+}
+
+.nl-footer-quote {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .nl-footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .nl-footer-links {
+    justify-content: center;
+  }
+
+  .nl-footer-bottom-inner {
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: center;
+  }
+}

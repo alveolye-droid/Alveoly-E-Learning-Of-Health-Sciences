@@ -1,0 +1,308 @@
+/* ===============================
+   Root Wrapper
+================================ */
+.create-exam {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #f9fafb;
+}
+
+/* ===============================
+   Page Title
+================================ */
+.create-exam h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+/* ===============================
+   Exam Form
+================================ */
+.exam-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  margin-bottom: 28px;
+}
+
+.exam-form input,
+.exam-form select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exam-form input:focus,
+.exam-form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Loading & error text */
+.exam-form p {
+  grid-column: span 3;
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* ===============================
+   Exam Actions Buttons
+================================ */
+.exam-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.exam-actions button {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: #ffffff;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exam-actions button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.exam-actions button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Special buttons */
+.exam-actions button:nth-child(2) {
+  background: #f59e0b;
+}
+
+.exam-actions button:nth-child(2):hover:not(:disabled) {
+  background: #d97706;
+}
+
+.exam-actions button:nth-child(3) {
+  background: #10b981;
+}
+
+.exam-actions button:nth-child(3):hover:not(:disabled) {
+  background: #059669;
+}
+
+.exam-actions button:nth-child(4) {
+  background: #6b7280;
+}
+
+.exam-actions button:nth-child(4):hover:not(:disabled) {
+  background: #4b5563;
+}
+
+.exam-actions button:nth-child(5) {
+  background: #0ea5e9;
+}
+
+.exam-actions button:nth-child(5):hover {
+  background: #0284c7;
+}
+
+/* ===============================
+   View Exams Section
+================================ */
+.view-exams {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  margin-top: 28px;
+}
+
+.view-exams h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* ===============================
+   Table Styling
+================================ */
+.view-exams table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.view-exams thead {
+  background: #f3f4f6;
+}
+
+.view-exams th,
+.view-exams td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.view-exams th {
+  font-weight: 600;
+  color: #374151;
+}
+
+.view-exams tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Table buttons */
+.view-exams td button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-right: 6px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.view-exams td button:first-child {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.view-exams td button:first-child:hover {
+  background: #1d4ed8;
+}
+
+.view-exams td button:last-child {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.view-exams td button:last-child:hover {
+  background: #b91c1c;
+}
+
+/* ===============================
+   Status Badge
+================================ */
+.status {
+  margin-top: 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.status.draft {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.approved {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status.published {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.locked {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ===============================
+   Responsive Design
+================================ */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .exam-form {
+    grid-template-columns: 1fr;
+  }
+
+  .exam-actions {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .create-exam {
+    padding: 16px;
+  }
+
+  .create-exam h1 {
+    font-size: 1.6rem;
+  }
+
+  .exam-actions button {
+    width: 100%;
+  }
+
+  .view-exams table,
+  .view-exams thead,
+  .view-exams tbody,
+  .view-exams th,
+  .view-exams td,
+  .view-exams tr {
+    display: block;
+  }
+
+  .view-exams thead {
+    display: none;
+  }
+
+  .view-exams tr {
+    margin-bottom: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px;
+  }
+
+  .view-exams td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border: none;
+  }
+
+  .view-exams td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #374151;
+  }
+}

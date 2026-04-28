@@ -1,0 +1,227 @@
+:root {
+  --primary-color: #004aad;
+  --secondary-color: #0d6efd;
+  --bg-color: pink;
+  --card-bg: #fff;
+  --text-color: #222;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --transition: 0.3s ease;
+}
+
+body.dark-mode {
+  --primary-color: #1e90ff;
+  --secondary-color: #007bff;
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #f1f1f1;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Container ===== */
+.all-courses-container {
+  max-width: 900px;
+  max-height: 80vh;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 20px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Header */
+.all-courses-header {
+  flex-shrink: 0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.page-title {
+  color: var(--primary-color);
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  color: gray;
+  font-size: 0.95rem;
+}
+
+/* Feedback message */
+.feedback-message {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Scrollable Table Wrapper ===== */
+.table-scroll-wrapper {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) rgba(0,0,0,0.05);
+}
+
+.table-scroll-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 8px;
+}
+
+/* Table */
+.courses-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.courses-table th,
+.courses-table td {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 0.5rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.courses-table th {
+  background: var(--bg-color);
+}
+
+.actions button {
+  background: pink;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.3rem;
+  font-size: 1rem;
+  transition: transform var(--transition);
+}
+
+.actions button:hover {
+  transform: scale(1.1);
+}
+
+.edit-btn {
+  color: var(--primary-color);
+}
+
+.delete-btn {
+  color: #e63946;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  outline: none;
+  transition: border var(--transition), box-shadow var(--transition);
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.15);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.save-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.save-btn:hover {
+  background: var(--secondary-color);
+}
+
+.cancel-btn {
+  background: #ccc;
+  color: #222;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-btn:hover {
+  background: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .all-courses-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .courses-table th,
+  .courses-table td {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .all-courses-container {
+    padding: 1rem;
+  }
+}

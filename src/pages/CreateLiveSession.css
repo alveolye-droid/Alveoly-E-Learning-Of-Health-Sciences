@@ -1,0 +1,193 @@
+/* --------------------------------------------------------------
+   GLOBAL PAGE LAYOUT
+---------------------------------------------------------------- */
+.create-course-page {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: "Inter", sans-serif;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------
+   HEADER / TITLE
+---------------------------------------------------------------- */
+.create-course-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ff6b00;
+  text-shadow: 0 2px 6px rgba(255, 120, 0, 0.25);
+}
+
+.page-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-top: 5px;
+}
+
+
+/* --------------------------------------------------------------
+   FORM WRAPPER (Glassmorphism)
+---------------------------------------------------------------- */
+.create-course-form-wrapper {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 170, 0, 0.2);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+
+  transition: 0.3s ease-in-out;
+}
+
+.create-course-form-wrapper:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --------------------------------------------------------------
+   FORM STRUCTURE
+---------------------------------------------------------------- */
+.create-course-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ffd89a;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #fffaf2;
+  transition: 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #ff9800;
+  background: #fff4e0;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.15);
+}
+
+
+/* --------------------------------------------------------------
+   SUBMIT BUTTON (Gradient & Modern)
+---------------------------------------------------------------- */
+.submit-btn {
+  background: linear-gradient(120deg, #ff8600, #ffcd00);
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.25s ease;
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(120deg, #ffa132, #ffe066);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 153, 0, 0.3);
+}
+
+.submit-btn:disabled {
+  background: #ccc !important;
+  color: #777;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* --------------------------------------------------------------
+   FEEDBACK MESSAGE
+---------------------------------------------------------------- */
+.feedback-message {
+  margin-top: 15px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #fff7dc;
+  border-left: 5px solid #ffc83d;
+  color: #444;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease;
+}
+
+
+/* --------------------------------------------------------------
+   JITSI VIDEO CONTAINER
+---------------------------------------------------------------- */
+#jitsi-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  background: #000;
+  margin-bottom: 40px;
+}
+
+
+/* --------------------------------------------------------------
+   RESPONSIVE DESIGN
+---------------------------------------------------------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 26px;
+  }
+
+  .create-course-form-wrapper {
+    padding: 20px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .create-course-page {
+    padding: 18px 10px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .create-course-form-wrapper {
+    padding: 18px;
+  }
+
+  .submit-btn {
+    font-size: 15px;
+    padding: 13px;
+  }
+
+  #jitsi-container {
+    height: 420px !important;
+  }
+}

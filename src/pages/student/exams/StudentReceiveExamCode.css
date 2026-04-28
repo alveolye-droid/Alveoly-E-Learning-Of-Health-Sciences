@@ -1,0 +1,139 @@
+/* ===============================
+  GLOBAL RESET
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #f5f6fa;
+  color: #2f3640;
+}
+
+/* ===============================
+  EXAM CODE CONTAINER
+================================= */
+.exam-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+/* ===============================
+  EXAM CODE BOX
+================================= */
+.exam-code-box {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.exam-code-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.exam-code-box p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+/* ===============================
+  ERROR MESSAGE
+================================= */
+.error {
+  color: #ff4757;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* ===============================
+  INPUT FIELD
+================================= */
+.exam-code-box input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.exam-code-box input[type="text"]:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2);
+  outline: none;
+}
+
+/* ===============================
+  SUBMIT BUTTON
+================================= */
+.exam-code-box button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #2575fc;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exam-code-box button:hover:not(:disabled) {
+  background: #1a5edb;
+  transform: translateY(-2px);
+}
+
+.exam-code-box button:disabled {
+  background: #999;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===============================
+  RESPONSIVE
+================================= */
+@media (max-width: 480px) {
+  .exam-code-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .exam-code-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .exam-code-box p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===============================
+  ANIMATIONS
+================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

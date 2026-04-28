@@ -1,0 +1,185 @@
+/* ===============================
+   Dashboard – Framer Motion Edition
+   Responsive & Animated
+   =============================== */
+
+.dashboard {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f9fafb, #eef2f7);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #1f2937;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animated title */
+.animated-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 1px;
+  display: inline-block;
+  cursor: default;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.animated-title:hover {
+  transform: scale(1.03);
+}
+
+/* Hover underline animation */
+.animated-title:hover::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #3b82f6;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  animation: underlineExpand 0.4s forwards;
+}
+
+@keyframes underlineExpand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 140px;
+  }
+}
+
+/* Logo Styling */
+.school-logo {
+  width: 120px;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.school-logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Subtitle */
+.fade-text {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-top: 25px;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+/* Redirecting note */
+.redirect-note {
+  font-size: 0.95rem;
+  color: #3b82f6;
+  margin-top: 25px;
+  opacity: 0;
+  animation: fadeSlideUp 3s ease-in-out 3.5s forwards;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   Responsive Design
+   =============================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 30px;
+  }
+
+  .animated-title {
+    font-size: 2.3rem;
+  }
+
+  .fade-text {
+    font-size: 1rem;
+  }
+
+  .redirect-note {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large Phones */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 25px;
+  }
+
+  .animated-title {
+    font-size: 1.9rem;
+    line-height: 1.3;
+  }
+
+  .fade-text {
+    font-size: 0.95rem;
+  }
+
+  .school-logo {
+    width: 90px;
+  }
+
+  .redirect-note {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .animated-title {
+    font-size: 1.6rem;
+  }
+
+  .fade-text {
+    font-size: 0.9rem;
+  }
+
+  .school-logo {
+    width: 75px;
+  }
+
+  .redirect-note {
+    font-size: 0.85rem;
+  }
+}
+
+/* Tiny screens */
+@media (max-width: 360px) {
+  .animated-title {
+    font-size: 1.4rem;
+  }
+
+  .fade-text {
+    font-size: 0.85rem;
+  }
+
+  .redirect-note {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,290 @@
+/* ===============================
+   GLOBAL RESET & VARIABLES
+================================ */
+:root {
+  --primary: #2563eb;        /* Blue */
+  --primary-dark: #1e40af;
+  --success: #16a34a;        /* Green */
+  --danger: #dc2626;         /* Red */
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e5e7eb;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================ */
+.lecturer-results-container {
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+}
+
+.lecturer-results-container h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+/* ===============================
+   STATUS TEXT
+================================ */
+.lecturer-results-container p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ===============================
+   RESULTS TABLE
+================================ */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.results-table thead {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+}
+
+.results-table th,
+.results-table td {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.results-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.results-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease;
+}
+
+.results-table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+.results-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* ===============================
+   VIEW BUTTON
+================================ */
+.view-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.view-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   MODAL OVERLAY
+================================ */
+.result-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* ===============================
+   MODAL CARD
+================================ */
+.result-modal {
+  background: var(--card);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  animation: scaleIn 0.25s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-modal h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.result-modal p {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ===============================
+   ANSWERS REVIEW
+================================ */
+.answers-review {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.answer-box {
+  border-radius: 12px;
+  padding: 1rem;
+  background: #f8fafc;
+  border-left: 6px solid var(--border);
+}
+
+.answer-box.correct {
+  border-left-color: var(--success);
+  background: #ecfdf5;
+}
+
+.answer-box.wrong {
+  border-left-color: var(--danger);
+  background: #fef2f2;
+}
+
+.answer-box p {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.answer-box span {
+  font-weight: 600;
+}
+
+.rationale {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--danger);
+}
+
+/* ===============================
+   CLOSE BUTTON
+================================ */
+.close-btn-results {
+  margin-top: 1.5rem;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.85rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.close-btn-results:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 900px) {
+  .results-table {
+    font-size: 0.85rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .results-table thead {
+    display: none;
+  }
+
+  .results-table,
+  .results-table tbody,
+  .results-table tr,
+  .results-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .results-table tr {
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+    padding: 0.5rem;
+  }
+
+  .results-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .results-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--muted);
+  }
+}
+
+@media (max-width: 480px) {
+  .lecturer-results-container {
+    padding: 1rem;
+  }
+
+  .result-modal {
+    padding: 1.4rem;
+  }
+
+  .view-btn,
+  .close-btn {
+    width: 100%;
+  }
+}

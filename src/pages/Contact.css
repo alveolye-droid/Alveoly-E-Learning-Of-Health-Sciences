@@ -1,0 +1,237 @@
+/* ========================
+   GLOBAL STYLES
+======================== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.contact-page {
+  width: 100%;
+  overflow-x: hidden;
+  background: #f9f9fb;
+  color: #222;
+}
+
+/* ========================
+   HERO SECTION
+======================== */
+.contact-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url("../images/woman-having-online-meeting-work.jpg")center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+  color: #eaeaea;
+}
+
+/* ========================
+   CONTACT SECTION
+======================== */
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 5rem 8%;
+  align-items: start;
+}
+
+/* ========================
+   INFO CARDS
+======================== */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  color: #0056d2;
+  margin-bottom: 0.8rem;
+}
+
+.info-card h3 {
+  font-size: 1.3rem;
+  color: #002855;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ========================
+   CONTACT FORM
+======================== */
+.contact-form {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #002855;
+}
+
+/* ===== Form Fields ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.9rem 1rem;
+  border: 2px solid #e5e5ef;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fdfdfd;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4db8ff;
+  box-shadow: 0 0 8px rgba(77,184,255,0.3);
+  outline: none;
+}
+
+/* ========================
+   SUBMIT BUTTON
+======================== */
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg,#4db8ff,#0066cc);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg,#66ccff,#0077e6);
+  transform: scale(1.03);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ========================
+   RESPONSIVENESS
+======================== */
+@media (max-width: 992px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    padding: 4rem 6%;
+  }
+
+  .contact-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    flex: 1 1 280px;
+  }
+
+  .contact-form {
+    margin-top: 2rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .contact-hero p {
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    font-size: 0.95rem;
+  }
+}

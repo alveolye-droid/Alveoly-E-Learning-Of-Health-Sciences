@@ -1,0 +1,116 @@
+.unlock-exam-container {
+  padding: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.unlock-exam-container h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.unlock-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+}
+
+.schedule-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0057d8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.schedule-btn:hover {
+  background: #003f9c;
+}
+
+.status-msg {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.status-msg.success {
+  background: #e6ffe6;
+  color: #0f7a0f;
+}
+
+.status-msg.error {
+  background: #ffe6e6;
+  color: #b30000;
+}
+
+/* Schedule Table */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.schedule-table th {
+  background: #f0f0f0;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  background: #d80000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #a30000;
+}
+
+body.dark-mode .unlock-form,
+body.dark-mode .schedule-table th,
+body.dark-mode .schedule-table td {
+  background: #2a2a2a;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark-mode .schedule-btn {
+  background: #0066ff;
+}
+
+body.dark-mode .delete-btn {
+  background: #d11a1a;
+}

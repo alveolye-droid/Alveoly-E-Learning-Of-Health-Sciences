@@ -1,0 +1,221 @@
+/* ======================================
+   ROOT VARIABLES
+====================================== */
+:root {
+  --primary: #1e40af;
+  --primary-light: #3b82f6;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* ======================================
+   PAGE CONTAINER
+====================================== */
+.admin-study-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 36px 22px 70px;
+}
+
+.admin-study-container h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+/* ======================================
+   STATUS MESSAGE
+====================================== */
+.status-msg {
+  margin-bottom: 18px;
+  font-weight: 600;
+  color: var(--danger);
+}
+
+/* ======================================
+   FORM
+====================================== */
+.admin-study-form {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+/* ======================================
+   LABELS & INPUTS
+====================================== */
+.admin-study-form label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.admin-study-form input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.25s ease;
+}
+
+.admin-study-form input:focus {
+  border-color: var(--primary);
+}
+
+/* ======================================
+   SECTIONS HEADER
+====================================== */
+.admin-study-form h3 {
+  margin-top: 30px;
+  margin-bottom: 14px;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+/* ======================================
+   SECTION BOX
+====================================== */
+.section-box {
+  margin-bottom: 30px;
+  padding: 22px;
+  border-radius: 16px;
+  background: #f9fafb;
+  border: 1px solid var(--border);
+}
+
+/* Section heading input */
+.section-box > input:first-child {
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+/* ======================================
+   REACT QUILL
+====================================== */
+.section-box .ql-toolbar {
+  border-radius: 10px 10px 0 0;
+  border-color: var(--border);
+  background: #fff;
+}
+
+.section-box .ql-container {
+  border-radius: 0 0 10px 10px;
+  border-color: var(--border);
+  min-height: 180px;
+  font-size: 0.95rem;
+}
+
+.section-box .ql-editor {
+  padding: 14px;
+  line-height: 1.7;
+}
+
+/* ======================================
+   QUIZ AREA
+====================================== */
+.section-box h4 {
+  margin-top: 22px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.section-box input {
+  margin-bottom: 10px;
+}
+
+/* ======================================
+   SUBMIT BUTTON
+====================================== */
+.admin-study-form button[type="submit"] {
+  margin-top: 30px;
+  padding: 14px;
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.1s ease;
+}
+
+.admin-study-form button[type="submit"]:hover {
+  background: var(--primary-light);
+}
+
+.admin-study-form button[type="submit"]:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ======================================
+   TABLET
+====================================== */
+@media (max-width: 1024px) {
+  .admin-study-container {
+    padding: 30px 18px 60px;
+  }
+
+  .admin-study-container h2 {
+    font-size: 1.9rem;
+  }
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+@media (max-width: 768px) {
+  .admin-study-container {
+    padding: 24px 16px 50px;
+  }
+
+  .admin-study-form {
+    padding: 22px;
+  }
+
+  .admin-study-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-box {
+    padding: 18px;
+  }
+}
+
+/* ======================================
+   SMALL MOBILE
+====================================== */
+@media (max-width: 480px) {
+  .admin-study-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .admin-study-form input {
+    font-size: 0.9rem;
+  }
+}
+
+/* ======================================
+   PRINT FRIENDLY (OPTIONAL)
+====================================== */
+@media print {
+  .admin-study-form button {
+    display: none;
+  }
+}

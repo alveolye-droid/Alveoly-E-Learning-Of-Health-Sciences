@@ -1,0 +1,103 @@
+/* ===============================
+   LECTURER ACCESS CONTROL
+   =============================== */
+
+.lecturer-access-control {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* ---------- HEADER ---------- */
+.lecturer-access-control h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------- FORM LAYOUT ---------- */
+.lecturer-access-control select,
+.lecturer-access-control input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  background: #ffffff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lecturer-access-control select:focus,
+.lecturer-access-control input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ---------- DURATION ROW ---------- */
+.lecturer-access-control .duration-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ---------- BUTTON ---------- */
+.lecturer-access-control button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.lecturer-access-control button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.lecturer-access-control button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+  .lecturer-access-control {
+    margin: 20px 12px;
+    padding: 22px;
+  }
+
+  .lecturer-access-control h2 {
+    font-size: 1.3rem;
+  }
+
+  .lecturer-access-control .duration-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- SUBTLE ENHANCEMENTS ---------- */
+.lecturer-access-control option {
+  font-size: 0.95rem;
+}
+
+.lecturer-access-control select {
+  cursor: pointer;
+}

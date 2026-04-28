@@ -1,0 +1,170 @@
+/* Root wrapper */
+.post-exam {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.8rem;
+  background: linear-gradient(135deg, #f8fbff, #eef5ff);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.post-exam h4 {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #1e3a8a;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+/* Question text */
+.question {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 1.4rem;
+  line-height: 1.6;
+}
+
+/* Options grid */
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+/* Option buttons */
+.options button {
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #c7d2fe;
+  background: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #1e293b;
+}
+
+/* Hover */
+.options button:hover:not(:disabled) {
+  background: #eef2ff;
+  border-color: #6366f1;
+  transform: translateY(-2px);
+}
+
+/* Disabled state */
+.options button:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+/* Correct answer */
+.options button.correct {
+  background: #dcfce7;
+  border-color: #22c55e;
+  color: #14532d;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+/* Wrong answer */
+.options button.wrong {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #7f1d1d;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+/* Rationale box */
+.rationale {
+  margin-top: 1.6rem;
+  padding: 1.2rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffffff, #f1f5ff);
+  border-left: 6px solid #6366f1;
+  animation: slideUp 0.4s ease;
+}
+
+/* Rationale text */
+.rationale strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.rationale p {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.rationale small {
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Exam completed */
+.exam-done {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #16a34a;
+  padding: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .post-exam {
+    padding: 1.2rem;
+    margin: 1rem;
+  }
+
+  .post-exam h4 {
+    font-size: 1.2rem;
+  }
+
+  .question {
+    font-size: 1rem;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
+
+  .options button {
+    font-size: 0.95rem;
+  }
+}
+
+/* 💻 Large screens */
+@media (min-width: 1200px) {
+  .post-exam {
+    max-width: 900px;
+  }
+}

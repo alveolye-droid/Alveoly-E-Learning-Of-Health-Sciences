@@ -1,0 +1,104 @@
+/* 🌐 Page Wrapper */
+.exam-code-generator {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  background: #f8fafc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.exam-code-generator h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b3c64;
+  margin-bottom: 25px;
+}
+
+/* 📋 Table Wrapper for Responsive Scroll */
+.exam-code-generator table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* 🧾 Table Head */
+.exam-code-generator table thead {
+  background: #0b3c64;
+  color: #fff;
+}
+
+.exam-code-generator th,
+.exam-code-generator td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* 🟣 Hover Row Highlight */
+.exam-code-generator tbody tr:hover {
+  background: #f1f8ff;
+  transition: 0.25s ease;
+}
+
+/* 🎯 Buttons */
+.exam-code-generator button {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  margin: 2px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.exam-code-generator button:first-child {
+  background: #005fcc;
+  color: #fff;
+}
+
+.exam-code-generator button:first-child:hover {
+  background: #0047a6;
+}
+
+.exam-code-generator button:last-child {
+  background: #16a34a;
+  color: #fff;
+}
+
+.exam-code-generator button:last-child:hover {
+  background: #128438;
+}
+
+/* 🟥 Disabled Buttons (Optional) */
+.exam-code-generator button:disabled {
+  background: #9ca3af !important;
+  cursor: not-allowed;
+}
+
+/* 📱 RESPONSIVE - Mobile Scrolling/Table Fix */
+@media (max-width: 900px) {
+  .exam-code-generator table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .exam-code-generator h1 {
+    font-size: 1.5rem;
+  }
+
+  .exam-code-generator button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,279 @@
+/* ===============================
+   Question List Wrapper
+================================ */
+.question-list {
+  margin-top: 32px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.question-list h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* ===============================
+   Question Card
+================================ */
+.question-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #f9fafb;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.question-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   Question Text
+================================ */
+.question-card p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+/* ===============================
+   Options List
+================================ */
+.question-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0 14px;
+}
+
+.question-card li {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-card li strong {
+  font-weight: 600;
+}
+
+.question-card li:last-child {
+  margin-bottom: 0;
+}
+
+/* Highlight correct answer */
+.question-card li:has(span),
+.question-card li:has(✔) {
+  background: #dcfce7;
+  border-color: #86efac;
+}
+
+/* ===============================
+   Question Actions (View Mode)
+================================ */
+.question-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.question-actions button {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.15s ease;
+}
+
+.question-actions button:first-child {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.question-actions button:first-child:hover {
+  background: #1d4ed8;
+}
+
+.question-actions button:last-child {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.question-actions button:last-child:hover {
+  background: #b91c1c;
+}
+
+/* ===============================
+   Edit Mode Wrapper
+================================ */
+.edit-question {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Inputs & textarea */
+.edit-question input,
+.edit-question select,
+.edit-question textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-question input:focus,
+.edit-question select:focus,
+.edit-question textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.edit-question textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* ===============================
+   Edit Options
+================================ */
+.options-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.options-edit > div {
+  display: flex;
+  gap: 8px;
+}
+
+.options-edit button {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.options-edit button:hover {
+  background: #b91c1c;
+}
+
+/* Add option button */
+.options-edit > button {
+  align-self: flex-start;
+  background: #10b981;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.options-edit > button:hover {
+  background: #059669;
+}
+
+/* ===============================
+   Edit Actions
+================================ */
+.edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.edit-actions button {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-actions button:first-child {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.edit-actions button:first-child:hover {
+  background: #1d4ed8;
+}
+
+.edit-actions button:last-child {
+  background: #6b7280;
+  color: #ffffff;
+}
+
+.edit-actions button:last-child:hover {
+  background: #4b5563;
+}
+
+/* ===============================
+   Empty State
+================================ */
+.question-list > p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ===============================
+   Responsive Design
+================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .question-card {
+    padding: 14px;
+  }
+
+  .question-actions,
+  .edit-actions {
+    flex-direction: column;
+  }
+
+  .question-actions button,
+  .edit-actions button {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .question-list {
+    padding: 16px;
+  }
+
+  .question-list h3 {
+    font-size: 1.25rem;
+  }
+
+  .question-card p,
+  .question-card li {
+    font-size: 0.88rem;
+  }
+
+  .options-edit > div {
+    flex-direction: column;
+  }
+}

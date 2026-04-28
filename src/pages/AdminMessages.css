@@ -1,0 +1,150 @@
+/* =========================
+   Admin Messages Page Styles
+============================== */
+
+.admin-messages-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937; /* dark text */
+  background-color: #f9fafb; /* light background */
+}
+
+.admin-messages-page h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #111827;
+}
+
+.messages-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.message-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.message-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.message-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.message-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4b5563; /* gray-600 */
+}
+
+.message-card .date {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #9ca3af; /* gray-400 */
+  text-align: right;
+}
+
+/* Reply textarea */
+.message-card textarea {
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  width: 100%;
+  min-height: 60px;
+  transition: border-color 0.2s ease;
+}
+
+.message-card textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Reply button */
+.message-card button {
+  margin-top: 0.5rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.message-card button:hover {
+  background-color: #1d4ed8;
+}
+
+.message-card button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Feedback for no messages */
+.admin-messages-page p {
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280; /* gray-500 */
+}
+
+/* Loading text */
+.admin-messages-page p.loading {
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .messages-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .messages-list {
+    grid-template-columns: 1fr;
+  }
+
+  .message-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-messages-page {
+    padding: 1rem;
+  }
+
+  .message-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .message-card p {
+    font-size: 0.9rem;
+  }
+
+  .message-card button {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,152 @@
+/* ===============================
+   Facebook-like Light/Dark Mode CSS
+   For: StudentCourses.jsx
+   Auto-theme using prefers-color-scheme
+   =============================== */
+
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+  --bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --text: #1c1e21;
+  --subtext: #65676b;
+  --border: #d3d6da;
+  --button-bg: #e4e6eb;
+  --button-text: #050505;
+  --button-accent: #1877f2;
+  --button-accent-text: #ffffff;
+  --danger: #ff4d4f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18191a;
+    --card-bg: #242526;
+    --text: #e4e6eb;
+    --subtext: #b0b3b8;
+    --border: #3a3b3c;
+    --button-bg: #3a3b3c;
+    --button-text: #e4e6eb;
+    --button-accent: #4599ff;
+  }
+}
+
+/* ---------- PAGE CONTAINER ---------- */
+.student-course-container {
+  background: var(--bg);
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--text);
+}
+
+/* ---------- COURSE CARD ---------- */
+.course-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.course-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.course-category {
+  background: var(--button-bg);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--subtext);
+}
+
+/* ---------- CONTENT SECTION ---------- */
+.course-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+.content-item {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.content-item img,
+.content-item video,
+.content-item audio {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+/* ---------- LOCKED CONTENT ---------- */
+.blurred {
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.unlock-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.65);
+  padding: 14px 18px;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.lock-small {
+  font-size: 18px;
+}
+
+.unlock-btn {
+  background: var(--button-accent);
+  color: var(--button-accent-text);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.unlock-btn:hover {
+  opacity: 0.9;
+}
+
+/* ---------- FOOTER ---------- */
+.course-footer {
+  margin-top: 14px;
+  font-weight: 600;
+  color: var(--subtext);
+  font-size: 15px;
+}
+
+.course-price {
+  font-size: 16px;
+}

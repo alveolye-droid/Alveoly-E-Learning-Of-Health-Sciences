@@ -1,0 +1,261 @@
+/* ========================================================= */
+/* FLOATING CHAT ICON */
+/* ========================================================= */
+.answerbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 26px;
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+.answerbot-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ========================================================= */
+/* CHAT WINDOW */
+/* ========================================================= */
+.answerbot-window {
+  position: fixed;
+  bottom: 80px;
+  right: 25px;
+  width: 360px;
+  max-width: 95%;
+  max-height: 75vh;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* ========================================================= */
+/* HEADER */
+/* ========================================================= */
+.answerbot-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4f46e5;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+/* ---- NEW IMPROVED CLOSE BUTTON ---- */
+.close-btn-chat {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.close-btn-chat:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* ========================================================= */
+/* MESSAGE LIST */
+/* ========================================================= */
+.answerbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
+}
+
+.msg-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.msg-row.user {
+  justify-content: flex-end;
+}
+
+.msg-row.bot {
+  justify-content: flex-start;
+}
+
+.msg-bubble {
+  max-width: 75%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.2s ease;
+}
+
+.msg-row.user .msg-bubble {
+  background: #4f46e5;
+  color: #fff;
+  border-bottom-right-radius: 2px;
+}
+
+.msg-row.bot .msg-bubble {
+  background: #e5e7eb;
+  color: #111827;
+  border-bottom-left-radius: 2px;
+}
+
+/* ========================================================= */
+/* INPUT AREA */
+/* ========================================================= */
+.answerbot-input {
+  display: flex;
+  gap: 6px;
+  padding: 8px;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.answerbot-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.answerbot-input input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79,70,229,0.2);
+}
+
+.answerbot-input button {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.answerbot-input button:hover {
+  background: #3730a3;
+  transform: scale(1.05);
+}
+
+/* ========================================================= */
+/* SCROLLBAR */
+/* ========================================================= */
+.answerbot-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.answerbot-messages::-webkit-scrollbar-thumb {
+  background: rgba(79, 70, 229, 0.5);
+  border-radius: 3px;
+}
+
+/* ========================================================= */
+/* RESPONSIVE DESIGN */
+/* ========================================================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .answerbot-window {
+    width: 90%;
+    bottom: 60px;
+    right: 5%;
+  }
+
+  .msg-bubble {
+    max-width: 80%;
+    font-size: 13px;
+  }
+
+  .answerbot-input input {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .answerbot-input button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .close-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    right: 8px;
+  }
+}
+
+/* Small mobile — FIXED ratio */
+@media (max-width: 420px) {
+  .answerbot-input {
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .answerbot-input input {
+    flex: 3;
+    font-size: 13px;
+  }
+
+  .answerbot-input button {
+    flex: 1;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 500px) {
+  .answerbot-window {
+    width: 95%;
+    bottom: 50px;
+    right: 2.5%;
+  }
+
+  .msg-bubble {
+    max-width: 85%;
+    font-size: 12px;
+  }
+
+  .answerbot-header {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,151 @@
+:root {
+  --primary-color: #004aad;
+  --secondary-color: #0d6efd;
+  --bg-color: #f9f9fb;
+  --card-bg: #fff;
+  --text-color: #222;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --transition: 0.3s ease;
+}
+
+body.dark-mode {
+  --primary-color: #1e90ff;
+  --secondary-color: #007bff;
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #f1f1f1;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* Container */
+.all-lecturers-container {
+  max-width: 900px;
+  max-height: 80vh;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 6px 20px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Header */
+.page-title {
+  color: var(--primary-color);
+  font-size: 1.9rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.page-subtitle {
+  color: gray;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Scrollable Table */
+.table-scroll-wrapper {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) rgba(0,0,0,0.05);
+}
+.table-scroll-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+.table-scroll-wrapper::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+.table-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 8px;
+}
+
+/* Table */
+.all-lecturers-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.all-lecturers-table th,
+.all-lecturers-table td {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+.all-lecturers-table th {
+  background: var(--bg-color);
+}
+
+.center {
+  text-align: center;
+}
+
+/* Buttons */
+.action-buttons .action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.3rem;
+  transition: transform var(--transition);
+}
+.action-buttons .action-btn:hover {
+  transform: scale(1.1);
+}
+.action-btn.edit {
+  color: var(--primary-color);
+}
+.action-btn.delete {
+  color: #e63946;
+}
+.save-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.save-btn:hover {
+  background: var(--secondary-color);
+}
+
+/* Inputs in edit mode */
+.edit-input {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Feedback & Loading */
+.loading-text,
+.no-data-text {
+  text-align: center;
+  font-size: 0.95rem;
+  color: gray;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .all-lecturers-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  .all-lecturers-table th,
+  .all-lecturers-table td {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 480px) {
+  .all-lecturers-container {
+    padding: 1rem;
+  }
+}
