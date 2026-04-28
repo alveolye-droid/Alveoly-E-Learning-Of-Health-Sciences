@@ -6,15 +6,13 @@ const API_URL = `${API_BASE}/api/auth`;
 
 /* ============================================================
    REGISTER USER
-   - Returns { user, token, dashboardPath }
-   - Saves user + token to localStorage
 ============================================================ */
 export const register = async (userData) => {
   const response = await axios.post(`${API_URL}/register`, userData);
   const data = response.data;
 
   if (data.token && data.user) {
-    localStorage.setItem("token", data.token);
+    localStorage.setItem("authToken", data.token);  // ✅ Changed from "token" to "authToken"
     localStorage.setItem("user", JSON.stringify(data.user));
   }
 
@@ -27,8 +25,6 @@ export const register = async (userData) => {
 
 /* ============================================================
    LOGIN USER
-   - Handles standard login flow
-   - Returns { user, token, dashboardPath }
 ============================================================ */
 export const login = async (credentials) => {
   const response = await axios.post(`${API_URL}/login`, credentials);
@@ -38,7 +34,7 @@ export const login = async (credentials) => {
     throw new Error(data?.message || "Invalid login response");
   }
 
-  localStorage.setItem("token", data.token);
+  localStorage.setItem("authToken", data.token);  // ✅ Changed from "token" to "authToken"
   localStorage.setItem("user", JSON.stringify(data.user));
 
   return {
@@ -50,15 +46,13 @@ export const login = async (credentials) => {
 
 /* ============================================================
    GOOGLE OAUTH LOGIN / REGISTER
-   - For OAuth callback token handling
-   - Saves user + token to localStorage
 ============================================================ */
 export const oauthLogin = async ({ token, user, dashboardPath }) => {
   if (!token || !user) {
     throw new Error("Missing OAuth token or user data");
   }
 
-  localStorage.setItem("token", token);
+  localStorage.setItem("authToken", token);  // ✅ Changed from "token" to "authToken"
   localStorage.setItem("user", JSON.stringify({ ...user, dashboardPath }));
 
   return { user: { ...user, dashboardPath }, token, dashboardPath };
@@ -66,21 +60,19 @@ export const oauthLogin = async ({ token, user, dashboardPath }) => {
 
 /* ============================================================
    LOGOUT USER
-   - Clears token + user from localStorage
 ============================================================ */
 export const logout = () => {
-  localStorage.removeItem("token");
+  localStorage.removeItem("authToken");  // ✅ Changed from "token" to "authToken"
   localStorage.removeItem("user");
 };
 
 /* ============================================================
    GET STORED TOKEN
 ============================================================ */
-export const getToken = () => localStorage.getItem("token");
+export const getToken = () => localStorage.getItem("authToken");  // ✅ Changed from "token" to "authToken"
 
 /* ============================================================
    GET CURRENT USER
-   - Parses user object from localStorage
 ============================================================ */
 export const getCurrentUser = () => {
   const storedUser = localStorage.getItem("user");
@@ -97,7 +89,6 @@ export const getCurrentUser = () => {
 
 /* ============================================================
    AXIOS INSTANCE WITH TOKEN
-   - Optional helper for authenticated requests
 ============================================================ */
 export const axiosWithToken = () => {
   const token = getToken();
